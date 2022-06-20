@@ -28,6 +28,7 @@ export async function signServiceSelfDescription(body: any): Promise<{
         errors: data
       }
     }
+
     return { signed: false }
   } catch (error: unknown) {
     if (error instanceof Error) console.error(error.message)

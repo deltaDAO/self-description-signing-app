@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React, { ReactElement, ReactNode } from 'react'
 import { useSiteMetadata } from '../hooks/UseSiteMetadata'
+import Styles from '../styles/Styles'
 
 export default function App({
   children
@@ -10,7 +11,7 @@ export default function App({
   const { site } = useSiteMetadata()
 
   return (
-    <>
+    <Styles>
       <Head>
         <title>{site.title}</title>
         <meta name="description" content={site.description} />
@@ -20,6 +21,6 @@ export default function App({
       <div>
         <main>{children}</main>
       </div>
-    </>
+    </Styles>
   )
 }

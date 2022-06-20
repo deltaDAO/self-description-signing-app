@@ -1,0 +1,8 @@
+.signedContainer {
+  margin-top: calc(var(--spacer) * 2);
+}
+
+.actions {
+  display: flex;
+  gap: calc(var(--spacer) / 2);
+}

@@ -1,8 +1,0 @@
-.container {
-  margin-top: calc(var(--spacer) * 2);
-}
-
-.actions {
-  display: flex;
-  gap: var(--spacer);
-}
