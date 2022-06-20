@@ -4,6 +4,8 @@ import styles from './index.module.css'
 import Sign from './Sign'
 import Header from './Header'
 import Hero from './Hero'
+import Container from '../atoms/Container'
+import Waves from '../atoms/Waves'
 
 export default function HomePage(): ReactElement {
   return (
@@ -15,9 +17,12 @@ export default function HomePage(): ReactElement {
       </Head>
       <Header />
       <Hero />
+      <Waves />
 
       <main className={styles.main}>
-        <Sign />
+        <Container>
+          <Sign />
+        </Container>
       </main>
 
       <footer className={styles.footer}></footer>

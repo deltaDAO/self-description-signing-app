@@ -53,6 +53,7 @@
   composes: input;
   height: auto;
   min-height: 400px;
+  margin-bottom: calc(var(--spacer) / 4);
 }
 
 .checkbox {
