@@ -1,3 +1,13 @@
+.container {
+  position: relative;
+}
+
+.container p {
+  position: absolute;
+  top: 0;
+  left: 37%;
+}
+
 .logo {
   width: 12rem;
   margin: 0;
