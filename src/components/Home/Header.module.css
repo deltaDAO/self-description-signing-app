@@ -1,0 +1,38 @@
+.header {
+  background: linear-gradient(
+    to bottom,
+    var(--brand-blue-darker) 50%,
+    var(--brand-blue-dark) 100%
+  );
+}
+
+.menu {
+  width: 100%;
+  padding: calc(var(--spacer) / 2);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.menu > * {
+  margin-bottom: calc(var(--spacer) / 2);
+}
+.logo {
+  width: 12rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 30rem) {
+  .menu {
+    flex-direction: row;
+  }
+
+  .menu > * {
+    margin-bottom: 0;
+  }
+  .logo {
+    width: 16rem;
+  }
+}
