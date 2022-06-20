@@ -1,0 +1,10 @@
+{
+  "title": "No own certificate prepared? Say no more!",
+  "subtitle": "We prepared the tool below to sign your Self Description for testing purpose in the context of the Gaia-X Hackathon #3. No need for your own certificate. All you need is your Self Description.",
+  "titleSuccess": "Find the signed Self Description here",
+  "titleFail": "Signing failed, see the errors below",
+  "form": {
+    "title": "Sign your Self Description",
+    "subtitle": "Input your self description in a valid JSON-LD format and we will sign it with a deltaDAO test-key."
+  }
+}

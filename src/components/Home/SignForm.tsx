@@ -5,6 +5,7 @@ import Button from '../atoms/Button'
 import Loader from '../atoms/Loader'
 import Warning from '../atoms/Warning'
 import styles from './SignForm.module.css'
+import content from '../../../content/sign.json'
 
 export default function SignForm({
   resultsRef,
@@ -15,6 +16,7 @@ export default function SignForm({
   setSignedSD: (signedSD: string) => void
   setSignatureErrors: (signatureErrors: string) => void
 }): ReactElement {
+  const { title, subtitle } = content.form
   const [unsignedSD, setUnsignedSD] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isAccepted, setIsAccepted] = useState(false)
@@ -47,11 +49,8 @@ export default function SignForm({
   }
   return (
     <div className={styles.container}>
-      <h1>Sign your Self Description</h1>
-      <p>
-        Input your self description in a valid JSON-LD format and we will sign
-        it with a deltaDAO test-key.
-      </p>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <textarea
           className={styles.textarea}

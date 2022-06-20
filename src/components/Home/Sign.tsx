@@ -6,8 +6,10 @@ import styles from './Sign.module.css'
 import { downloadFile } from '../../utils/sign'
 import { toast } from 'react-toastify'
 import Warning from '../atoms/Warning'
+import content from '../../../content/sign.json'
 
 export default function Sign(): ReactElement {
+  const { title, subtitle, titleSuccess, titleFail } = content
   const [signedSD, setSignedSD] = useState<string>()
   const [signatureErrors, setSignatureErrors] = useState<string>()
   const resultsRef = useRef(null)
@@ -15,12 +17,8 @@ export default function Sign(): ReactElement {
   return (
     <div>
       <div className={styles.header}>
-        <h1>No own certificate prepared? Say no more!</h1>
-        <h3>
-          We prepared the tool below to sign your Self Description for testing
-          purpose in the context of the Gaia-X Hackathon #3. No need for your
-          own certificate. All you need is your Self Description.
-        </h3>
+        <h1>{title}</h1>
+        <h3>{subtitle}</h3>
       </div>
       <SignForm
         setSignedSD={setSignedSD}
@@ -29,7 +27,7 @@ export default function Sign(): ReactElement {
       />
       {signedSD && (
         <div className={styles.signedContainer} ref={resultsRef}>
-          <h1>Find the signed Self Description here</h1>
+          <h1>{titleSuccess}</h1>
           <Visualizer text={signedSD} />
           <Warning />
           <div className={styles.actions}>
@@ -50,7 +48,7 @@ export default function Sign(): ReactElement {
       )}
       {signatureErrors && (
         <div className={styles.signedContainer} ref={resultsRef}>
-          <h1>Signing failed, see the errors below</h1>
+          <h1>{titleFail}</h1>
           <Visualizer text={signatureErrors} />
         </div>
       )}
