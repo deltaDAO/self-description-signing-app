@@ -45,10 +45,9 @@ export default function Hero(): ReactElement {
             i % 2 === 0 ? cx({ section: true, mirror: true }) : styles.section
           }
           style={{
-            backgroundImage: `url(../../images/${section.image}.png)`
+            backgroundImage: `url(/images/${section.image}.png)`
           }}
         >
-          <img src={`/src/images/${section.image}.png`} />
           <div className={styles.content}>
             <p className={styles.subtitle}>{section.subtitle}</p>
             <h2>{section.title}</h2>
