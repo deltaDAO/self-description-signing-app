@@ -1,4 +1,5 @@
 import { FormEvent, ReactElement, useState } from 'react'
+import { toast } from 'react-toastify'
 import { signServiceSelfDescription } from '../../utils/sign'
 import Button from '../atoms/Button'
 import Loader from '../atoms/Loader'
@@ -25,12 +26,17 @@ export default function SignForm({
       const responseSD = await signServiceSelfDescription(requestBody)
       if (responseSD.signed) {
         setSignedSD(responseSD.signedSD)
+        toast.success('Self-description successfully signed!')
         return
       }
       if (responseSD?.errors) setSignatureErrors(responseSD.errors)
     } catch (error) {
       if (error instanceof Error) console.error(error.message)
       console.error(String(error))
+
+      toast.error(
+        'The provided self-description is not valid. Please make sure it is a valid JSON file and try again.'
+      )
     } finally {
       setIsLoading(false)
     }
