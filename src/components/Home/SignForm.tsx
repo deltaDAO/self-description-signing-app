@@ -6,9 +6,11 @@ import Loader from '../atoms/Loader'
 import styles from './SignForm.module.css'
 
 export default function SignForm({
+  resultsRef,
   setSignedSD,
   setSignatureErrors
 }: {
+  resultsRef: any
   setSignedSD: (signedSD: string) => void
   setSignatureErrors: (signatureErrors: string) => void
 }): ReactElement {
@@ -27,6 +29,7 @@ export default function SignForm({
       if (responseSD.signed) {
         setSignedSD(responseSD.signedSD)
         toast.success('Self-description successfully signed!')
+        resultsRef.current.scrollIntoView({ behavior: 'smooth' })
         return
       }
       if (responseSD?.errors) setSignatureErrors(responseSD.errors)

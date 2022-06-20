@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react'
+import { ReactElement, useRef, useState } from 'react'
 import Button from '../atoms/Button'
 import SignForm from './SignForm'
 import Visualizer from './Visualizer'
@@ -9,21 +9,23 @@ import { toast } from 'react-toastify'
 export default function Sign(): ReactElement {
   const [signedSD, setSignedSD] = useState<string>()
   const [signatureErrors, setSignatureErrors] = useState<string>()
+  const resultsRef = useRef(null)
 
   return (
     <div>
-      <h1>No own certificate prepared? - Say no more!</h1>
-      <h2>
+      <h1>No own certificate prepared? Say no more!</h1>
+      <h3>
         We prepared the tool below to sign your Self Description for testing
-        purpose in the context of the Gaia-X Hackathon #4. No need for your own
+        purpose in the context of the Gaia-X Hackathon #3. No need for your own
         certificate. All you need is your Self Description.
-      </h2>
+      </h3>
       <SignForm
         setSignedSD={setSignedSD}
         setSignatureErrors={setSignatureErrors}
+        resultsRef={resultsRef}
       />
       {signedSD && (
-        <div className={styles.signedContainer}>
+        <div className={styles.signedContainer} ref={resultsRef}>
           <h1>Find the signed Self Description here</h1>
           <Visualizer text={signedSD} />
           <div className={styles.actions}>
