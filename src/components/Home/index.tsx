@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from './index.module.css'
 import Sign from './Sign'
 import Header from './Header'
+import Hero from './Hero'
 
 export default function HomePage(): ReactElement {
   return (
@@ -13,6 +14,7 @@ export default function HomePage(): ReactElement {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Hero />
 
       <main className={styles.main}>
         <Sign />

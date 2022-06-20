@@ -1,0 +1,26 @@
+{
+  "sections": [
+    {
+      "title": "Academy",
+      "subtitle": "Gaia-X and Ocean Protocol",
+      "content": "An interactive online education platform to introduce you to the new European Data Economy: Gaia-X, built on Ocean Protocol and DLT.",
+      "image": "education",
+      "cta": {
+        "label": "get started for free",
+        "target": "https://academy.delta-dao.com/",
+        "type": "primary"
+      }
+    },
+    {
+      "title": "Demonstrators",
+      "subtitle": "Minimal Viable Gaia-X",
+      "content": "Experience the new data economy today. We built multiple demonstrators showcasing Gaia-X using DLT.",
+      "image": "business_analytics",
+      "cta": {
+        "label": "try it now",
+        "target": "https://portal.minimal-gaia-x.eu/",
+        "type": "primary"
+      }
+    }
+  ]
+}
