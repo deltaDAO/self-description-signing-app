@@ -1,6 +1,9 @@
 import { ReactElement, useState } from 'react'
+import Button from '../atoms/Button'
 import SignForm from './SignForm'
 import Visualizer from './Visualizer'
+import styles from './Sign.module.css'
+import { downloadFile } from '../../utils/sign'
 
 export default function Sign(): ReactElement {
   const [signedSD, setSignedSD] = useState<string>()
@@ -17,7 +20,25 @@ export default function Sign(): ReactElement {
         setSignedSD={setSignedSD}
         setSignatureErrors={setSignatureErrors}
       />
-      {signedSD && <Visualizer text={signedSD} />}
+      {signedSD && (
+        <div className={styles.signedContainer}>
+          <h1>Find the signed Self Description here</h1>
+          <Visualizer text={signedSD} />
+          <div className={styles.actions}>
+            <Button
+              style="primary"
+              onClick={() => {
+                navigator.clipboard.writeText(JSON.stringify(signedSD, null, 2))
+              }}
+            >
+              Copy
+            </Button>
+            <Button style="primary" onClick={() => downloadFile(signedSD)}>
+              Download
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
