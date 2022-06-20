@@ -7,8 +7,8 @@ export default function Warning(): ReactElement {
     <div className={styles.container}>
       <AlertIcon />
       <p>
-        Note: This is ONLY meant for testing purpose in the context of the
-        Gaia-X hackathon
+        This is ONLY meant for testing purpose in the context of the Gaia-X
+        Hackathon
       </p>
     </div>
   )
