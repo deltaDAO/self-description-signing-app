@@ -41,3 +41,16 @@ export function getFormattedCodeString(body: string): string {
   const formattedString = JSON.stringify(body, null, 2)
   return `\`\`\`\n${formattedString}\n\`\`\``
 }
+
+export async function downloadFile(text: string) {
+  const fileName = 'signed-self-description'
+  const json = JSON.stringify(text, null, 2)
+  const blob = new Blob([json], { type: 'application/json' })
+  const href = await URL.createObjectURL(blob)
+  const link = document.createElement('a')
+  link.href = href
+  link.download = fileName + '.json'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}

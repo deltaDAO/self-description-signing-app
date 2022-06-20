@@ -1,4 +1,4 @@
-import { getFormattedCodeString } from '../../utils/sign'
+import { downloadFile, getFormattedCodeString } from '../../utils/sign'
 import Markdown from '../atoms/Markdown'
 
 export default function Visualizer({ text }: { text: string }) {
@@ -13,6 +13,7 @@ export default function Visualizer({ text }: { text: string }) {
       >
         Copy
       </button>
+      <button onClick={() => downloadFile(text)}>Download</button>
     </div>
   )
 }
