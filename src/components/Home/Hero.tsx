@@ -4,7 +4,6 @@ import React, { ReactElement } from 'react'
 import Button from '../atoms/Button'
 import Container from '../atoms/Container'
 import styles from './Hero.module.css'
-import Image from 'next/image'
 
 const cx = classNames.bind(styles)
 
@@ -20,21 +19,8 @@ interface SectionParams {
   }
 }
 
-interface ImageParams {
-  node: {
-    name: string
-    childImageSharp: { original: { src: string } }
-  }
-}
-
 export default function Hero(): ReactElement {
   const { sections } = content as { sections: SectionParams[] }
-  // const fullSections = sections.map((section: SectionParams) => ({
-  //   ...section,
-  //   image: sections.allFile.edges.find(
-  //     (image: ImageParams) => image.node.name === section.image
-  //   ).node.childImageSharp.original.src
-  // }))
 
   return (
     <Container className={styles.container}>

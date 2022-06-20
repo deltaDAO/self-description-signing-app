@@ -3,6 +3,7 @@ import { toast } from 'react-toastify'
 import { signServiceSelfDescription } from '../../utils/sign'
 import Button from '../atoms/Button'
 import Loader from '../atoms/Loader'
+import Warning from '../atoms/Warning'
 import styles from './SignForm.module.css'
 
 export default function SignForm({
@@ -57,10 +58,7 @@ export default function SignForm({
           onChange={(e) => setUnsignedSD(e.target.value)}
           value={unsignedSD}
         />
-        <p>
-          Note: This is ONLY meant for testing purpose in the context of the
-          Gaia-X hackathon
-        </p>
+        <Warning />
         <label>
           <input
             type="checkbox"
