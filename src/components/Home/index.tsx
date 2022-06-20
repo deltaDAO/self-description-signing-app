@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from './index.module.css'
 import Sign from './Sign'
 import Header from './Header'
+import Hero from './Hero'
 import Container from '../atoms/Container'
 import Waves from '../atoms/Waves'
 
@@ -14,6 +15,7 @@ export default function HomePage(): ReactElement {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Hero />
       <Waves />
 
       <main className={styles.main}>
