@@ -4,6 +4,7 @@ import React, { ReactElement } from 'react'
 import Button from '../atoms/Button'
 import Container from '../atoms/Container'
 import styles from './Hero.module.css'
+import Image from 'next/image'
 
 const cx = classNames.bind(styles)
 
@@ -41,10 +42,13 @@ export default function Hero(): ReactElement {
         <div
           key={i}
           className={
-            i % 2 === 1 ? cx({ section: true, mirror: true }) : styles.section
+            i % 2 === 0 ? cx({ section: true, mirror: true }) : styles.section
           }
-          style={{ backgroundImage: `url(${section.image})` }}
+          style={{
+            backgroundImage: `url(../../images/${section.image}.png)`
+          }}
         >
+          <img src={`/src/images/${section.image}.png`} />
           <div className={styles.content}>
             <p className={styles.subtitle}>{section.subtitle}</p>
             <h2>{section.title}</h2>
