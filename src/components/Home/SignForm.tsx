@@ -1,5 +1,7 @@
 import { FormEvent, ReactElement, useState } from 'react'
 import { signServiceSelfDescription } from '../../utils/sign'
+import Button from '../atoms/Button'
+import Loader from '../atoms/Loader'
 import styles from './SignForm.module.css'
 
 export default function SignForm({
@@ -12,7 +14,7 @@ export default function SignForm({
   const [unsignedSD, setUnsignedSD] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
     try {
@@ -31,23 +33,26 @@ export default function SignForm({
     }
   }
   return (
-    <form>
-      <textarea
-        className={styles.input}
-        onChange={(e) => setUnsignedSD(e.target.value)}
-        value={unsignedSD}
-      />
-      {isLoading ? (
-        <div>loading</div>
-      ) : (
-        <button
-          type="submit"
-          onClick={(e) => handleSubmit(e)}
-          className={styles.submitButton}
-        >
-          Sign
-        </button>
-      )}
-    </form>
+    <div className={styles.container}>
+      <h1>Sign your Self Description</h1>
+      <p>
+        Input your self description in a valid JSON-LD format and we will sign
+        it with a deltaDAO test-key.
+      </p>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <textarea
+          className={styles.textarea}
+          onChange={(e) => setUnsignedSD(e.target.value)}
+          value={unsignedSD}
+        />
+        {isLoading ? (
+          <Loader message="signing..." />
+        ) : (
+          <Button type="submit" style="primary" className={styles.submitButton}>
+            Sign
+          </Button>
+        )}
+      </form>
+    </div>
   )
 }
