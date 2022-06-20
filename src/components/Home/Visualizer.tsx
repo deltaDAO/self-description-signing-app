@@ -7,18 +7,21 @@ export default function Visualizer({ text }: { text: string }) {
   const formattedText = getFormattedCodeString(text)
   return (
     <div className={styles.container}>
+      <h1>Find the signed Self Description here</h1>
       <Markdown text={formattedText} />
-      <Button
-        style="primary"
-        onClick={() => {
-          navigator.clipboard.writeText(JSON.stringify(text, null, 2))
-        }}
-      >
-        Copy
-      </Button>
-      <Button style="primary" onClick={() => downloadFile(text)}>
-        Download
-      </Button>
+      <div className={styles.actions}>
+        <Button
+          style="primary"
+          onClick={() => {
+            navigator.clipboard.writeText(JSON.stringify(text, null, 2))
+          }}
+        >
+          Copy
+        </Button>
+        <Button style="primary" onClick={() => downloadFile(text)}>
+          Download
+        </Button>
+      </div>
     </div>
   )
 }

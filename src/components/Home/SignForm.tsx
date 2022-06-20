@@ -45,13 +45,13 @@ export default function SignForm({
           onChange={(e) => setUnsignedSD(e.target.value)}
           value={unsignedSD}
         />
-        {isLoading ? (
-          <Loader message="signing..." />
-        ) : (
-          <Button type="submit" style="primary" className={styles.submitButton}>
-            Sign
-          </Button>
-        )}
+        <p>
+          Note: This is ONLY meant for testing purpose in the context of the
+          Gaia-X hackathon
+        </p>
+        <Button type="submit" style="primary" disabled={isLoading}>
+          {isLoading ? <Loader message="signing..." /> : 'Validate and sign'}
+        </Button>
       </form>
     </div>
   )
