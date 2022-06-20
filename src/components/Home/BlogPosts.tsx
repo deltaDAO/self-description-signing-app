@@ -14,39 +14,32 @@ export default function BlogPosts(): ReactElement {
 
   return (
     <div className={styles.wrapper}>
-      <Container>
-        <h2 className={styles.title}>Our Latest Blog Posts</h2>
-        <div className={styles.postList}>
-          {posts.map((post: PostParams, i: number) => (
-            <a
-              key={i}
-              href={post.link}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <div
-                className={styles.post}
-                style={{
-                  backgroundImage: `linear-gradient(
+      <h2 className={styles.title}>Helpful Resources</h2>
+      <div className={styles.postList}>
+        {posts.map((post: PostParams, i: number) => (
+          <a key={i} href={post.link} target="_blank" rel="noreferrer noopener">
+            <div
+              className={styles.post}
+              style={{
+                backgroundImage: `linear-gradient(
                   180deg,
                   rgba(0, 0, 102, 0) 0%,
                   rgba(0, 0, 102, 0.6) 72.44%), url(/images/blog_${post.image}.png)`
-                }}
-              >
-                <h4 className={styles.postTitle}>{post.title}</h4>
-              </div>
-            </a>
-          ))}
-        </div>
-        <a
-          href="https://deltadao.medium.com/"
-          className={styles.more}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Read more on our Medium Blog
-        </a>
-      </Container>
+              }}
+            >
+              <h4 className={styles.postTitle}>{post.title}</h4>
+            </div>
+          </a>
+        ))}
+      </div>
+      <a
+        href="https://deltadao.medium.com/"
+        className={styles.more}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        Read more on our Medium Blog
+      </a>
     </div>
   )
 }
