@@ -1,0 +1,10 @@
+.logo {
+  width: 12rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 30rem) {
+  .logo {
+    width: 16rem;
+  }
+}
