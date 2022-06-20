@@ -36,3 +36,8 @@ export async function signServiceSelfDescription(body: any): Promise<{
     return { signed: false }
   }
 }
+
+export function getFormattedCodeString(body: string): string {
+  const formattedString = JSON.stringify(body, null, 2)
+  return `\`\`\`\n${formattedString}\n\`\`\``
+}

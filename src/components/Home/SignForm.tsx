@@ -10,11 +10,14 @@ export default function SignForm({
   setSignatureErrors: (signatureErrors: string) => void
 }): ReactElement {
   const [unsignedSD, setUnsignedSD] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    setIsLoading(true)
     try {
-      const responseSD = await signServiceSelfDescription(unsignedSD)
+      const requestBody = JSON.parse(unsignedSD)
+      const responseSD = await signServiceSelfDescription(requestBody)
       if (responseSD.signed) {
         setSignedSD(responseSD.signedSD)
         return
@@ -23,6 +26,8 @@ export default function SignForm({
     } catch (error) {
       if (error instanceof Error) console.error(error.message)
       console.error(String(error))
+    } finally {
+      setIsLoading(false)
     }
   }
   return (
@@ -30,14 +35,19 @@ export default function SignForm({
       <textarea
         className={styles.input}
         onChange={(e) => setUnsignedSD(e.target.value)}
-      >
-        {unsignedSD}
-      </textarea>
-      <button
-        type="submit"
-        onClick={(e) => handleSubmit(e)}
-        className={styles.submitButton}
-      ></button>
+        value={unsignedSD}
+      />
+      {isLoading ? (
+        <div>loading</div>
+      ) : (
+        <button
+          type="submit"
+          onClick={(e) => handleSubmit(e)}
+          className={styles.submitButton}
+        >
+          Sign
+        </button>
+      )}
     </form>
   )
 }

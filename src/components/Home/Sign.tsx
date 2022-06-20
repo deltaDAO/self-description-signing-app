@@ -1,4 +1,5 @@
 import { ReactElement, useState } from 'react'
+import { getFormattedCodeString } from '../../utils/sign'
 import SignForm from './SignForm'
 import Visualizer from './Visualizer'
 
@@ -11,7 +12,7 @@ export default function Sign(): ReactElement {
         setSignedSD={setSignedSD}
         setSignatureErrors={setSignatureErrors}
       />
-      <Visualizer text={signedSD || ''} />
+      {signedSD && <Visualizer text={getFormattedCodeString(signedSD)} />}
     </div>
   )
 }
