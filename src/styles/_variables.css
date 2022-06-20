@@ -1,37 +1,51 @@
 :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-cyan: #00ffff;
-  --color-purple: #7300f3;
+  --brand-white: #ffffff;
+  --brand-black: #141414;
+  --brand-cyan: #00ffff;
+  --brand-purple: #7300f3;
+  --brand-violet: #1c47e5;
 
-  --color-grey-dark: #6c7393;
-  --color-grey: #cccce0;
-  --color-grey-light: #f8f8fe;
+  --brand-blue-darker: #00004e;
+  --brand-blue-dark: #000066;
 
-  --color-alert-green: #5fb359;
-  --color-alert-red: #d80606;
-  --color-alert-orange: #b35f36;
-  --color-alert-yellow: #eac146;
+  --brand-grey-darker: #00000f;
+  --brand-grey-dark: #30303f;
+  --brand-grey: #41414f;
+  --brand-grey-light: #82828f;
+  --brand-grey-lighter: #e3e3ef;
+  --brand-grey-dimmed: #f6f6ff;
 
-  --color-primary: var(--color-purple);
-  --color-secondary: var(--color-black);
-
-  --gradient-primary: linear-gradient(
+  --brand-gradient: linear-gradient(
     to right top,
-    var(--color-purple) 0%,
-    var(--color-cyan) 100%
+    #7300f3 0%,
+    #1c47e5 40%,
+    #00ffff 100%
   );
 
-  --box-shadow-color: rgba(65, 65, 100, 0.15);
-  --box-shadow: 12px 22px 30px 0px var(--box-shadow-color);
+  --brand-alert-green: #5fb359;
+  --brand-alert-red: #d80606;
+  --brand-alert-orange: #b35f36;
+  --brand-alert-yellow: #eac146;
 
-  --font-color-text: var(--color-grey-dark);
-  --font-color-heading: var(--color-black);
+  --color-primary: var(--brand-cyan);
+  --color-secondary: #8b98a9;
+
+  /* Only use these vars for most color referencing for easy light/dark mode */
+  --font-color-text: var(--brand-white);
+  --font-color-heading: var(--brand-white);
+  --background-content: var(--brand-blue-darker);
+  --background-body: var(--brand-blue-dark);
+  --background-body-transparent: rgba(20, 20, 20, 0.9);
+  --background-highlight: var(--brand-grey-darker);
+  --border-color: var(--brand-grey-dark);
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
 
   --font-family-base: 'Overpass', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Helvetica, Arial, sans-serif;
   --font-family-heading: 'Overpass', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-family-monospace: 'Overpass Mono', 'Fira Mono', Menlo, Monaco, Consolas,
+    'Courier New', monospace;
 
   --font-size-root: 15px;
   --font-size-base: 1rem;
@@ -41,24 +55,25 @@
   --font-size-text: 1rem;
   --font-size-label: 1rem;
   --font-size-title: 1.4rem;
-  --font-size-page-title: 5.3rem;
+  --font-size-header: 5rem;
   --font-size-h1: 3rem;
   --font-size-h2: 2.5rem;
   --font-size-h3: 1.7rem;
   --font-size-h4: 1.3rem;
   --font-size-h5: 1.1rem;
-  --font-weight-light: 300;
   --font-weight-base: 400;
   --font-weight-bold: 700;
+  --font-weight-heavy: 900;
   --line-height: 1.6;
 
-  --spacer: 2rem;
+  --spacer: 2.5rem;
+  --border-radius: 0.8rem;
 
-  --border-radius-sm: 0.2rem;
-  --border-radius-lg: 10px;
+  --layout-max-width: 85rem;
+  --checkbox-size: 1.6em;
 
   --break-point--small: 640px;
   --break-point--medium: 860px;
   --break-point--large: 1140px;
-  --break-point--huge: 1400px;
+  --break-point--huge: 1350px;
 }
