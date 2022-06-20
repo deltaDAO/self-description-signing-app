@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './index.module.css'
+import Sign from './Sign'
 
 export default function HomePage(): ReactElement {
   return (
@@ -52,6 +53,7 @@ export default function HomePage(): ReactElement {
               </p>
             </a>
           </div>
+          <Sign />
         </main>
 
         <footer className={styles.footer}>
