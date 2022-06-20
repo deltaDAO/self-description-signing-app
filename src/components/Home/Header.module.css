@@ -19,6 +19,10 @@
 .menu > * {
   margin-bottom: calc(var(--spacer) / 2);
 }
+.logo {
+  width: 12rem;
+  margin: 0;
+}
 
 @media screen and (min-width: 30rem) {
   .menu {
@@ -27,5 +31,8 @@
 
   .menu > * {
     margin-bottom: 0;
+  }
+  .logo {
+    width: 16rem;
   }
 }

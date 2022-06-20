@@ -10,7 +10,7 @@ export default function Header(): ReactElement {
     <header className={styles.header}>
       <Container className={styles.menu}>
         <Link href="/">
-          <LogoFont />
+          <LogoFont className={styles.logo} />
         </Link>
 
         <Button style="outline" href="https://portal.minimal-gaia-x.eu/">
