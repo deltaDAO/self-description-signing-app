@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from './index.module.css'
 import Sign from './Sign'
 import Header from './Header'
+import Container from '../atoms/Container'
 
 export default function HomePage(): ReactElement {
   return (
@@ -15,7 +16,9 @@ export default function HomePage(): ReactElement {
       <Header />
 
       <main className={styles.main}>
-        <Sign />
+        <Container>
+          <Sign />
+        </Container>
       </main>
 
       <footer className={styles.footer}></footer>
