@@ -4,10 +4,12 @@ import SignForm from './SignForm'
 import Visualizer from './Visualizer'
 import styles from './Sign.module.css'
 import { downloadFile } from '../../utils/sign'
+import { toast } from 'react-toastify'
 
 export default function Sign(): ReactElement {
   const [signedSD, setSignedSD] = useState<string>()
   const [signatureErrors, setSignatureErrors] = useState<string>()
+
   return (
     <div>
       <h1>No own certificate prepared? - Say no more!</h1>
@@ -29,6 +31,7 @@ export default function Sign(): ReactElement {
               style="primary"
               onClick={() => {
                 navigator.clipboard.writeText(JSON.stringify(signedSD, null, 2))
+                toast.success('Copied to clipboard')
               }}
             >
               Copy
