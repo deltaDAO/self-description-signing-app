@@ -28,6 +28,10 @@ export default function Sign(): ReactElement {
         <div className={styles.signedContainer} ref={resultsRef}>
           <h1>Find the signed Self Description here</h1>
           <Visualizer text={signedSD} />
+          <p>
+            Note: This is ONLY meant for testing purpose in the context of the
+            Gaia-X hackathon
+          </p>
           <div className={styles.actions}>
             <Button
               style="primary"
@@ -42,6 +46,12 @@ export default function Sign(): ReactElement {
               Download
             </Button>
           </div>
+        </div>
+      )}
+      {signatureErrors && (
+        <div className={styles.signedContainer} ref={resultsRef}>
+          <h1>Signing failed, see the errors below</h1>
+          <Visualizer text={signatureErrors} />
         </div>
       )}
     </div>
