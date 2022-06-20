@@ -6,6 +6,7 @@ import Header from './Header'
 import Hero from './Hero'
 import Container from '../atoms/Container'
 import Waves from '../atoms/Waves'
+import BlogPosts from './BlogPosts'
 
 export default function HomePage(): ReactElement {
   return (
@@ -21,6 +22,7 @@ export default function HomePage(): ReactElement {
       <main className={styles.main}>
         <Container>
           <Sign />
+          <BlogPosts />
         </Container>
       </main>
 
