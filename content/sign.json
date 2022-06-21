@@ -1,6 +1,6 @@
 {
   "title": "No own certificate prepared? Say no more!",
-  "subtitle": "We prepared the tool below to sign your Self Description for testing purpose in the context of the Gaia-X Hackathon #3. No need for your own certificate. All you need is your Self Description.",
+  "subtitle": "We prepared the tool below to sign your Self Description for testing purpose in the context of the Gaia-X Hackathon #4. No need for your own certificate. All you need is your Self Description.",
   "titleSuccess": "Find the signed Self Description here",
   "titleFail": "Signing failed, see the errors below",
   "form": {
