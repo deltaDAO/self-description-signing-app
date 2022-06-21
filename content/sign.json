@@ -5,6 +5,6 @@
   "titleFail": "Signing failed, see the errors below",
   "form": {
     "title": "Sign your Self Description",
-    "subtitle": "Input your self description in a valid JSON-LD format and we will sign it with a deltaDAO test-key."
+    "subtitle": "Input your self description and we will sign it with a deltaDAO test-key. Need inspiration for your self-descriptions? Check out our [participant self-description](https://raw.githubusercontent.com/deltaDAO/files/main/sd_examples/participant_sd.json) and [service self-description](https://raw.githubusercontent.com/deltaDAO/files/main/sd_examples/service_offering_experimental_sd.json) examples."
   }
 }

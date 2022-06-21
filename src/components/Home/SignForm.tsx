@@ -7,6 +7,7 @@ import Warning from '../atoms/Warning'
 import styles from './SignForm.module.css'
 import content from '../../../content/sign.json'
 import placeholder from '../../../content/signFormPlaceholder.json'
+import Markdown from '../atoms/Markdown'
 
 export default function SignForm({
   errorsRef,
@@ -62,7 +63,7 @@ export default function SignForm({
   return (
     <div className={styles.container}>
       <h1>{title}</h1>
-      <p>{subtitle}</p>
+      <Markdown text={subtitle} />
       <form onSubmit={(e) => handleSubmit(e)}>
         <textarea
           className={styles.textarea}
