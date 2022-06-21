@@ -7,7 +7,7 @@
       "image": "business_analytics",
       "cta": {
         "label": "try it now",
-        "target": "https://academy.delta-dao.com/",
+        "target": "#signer",
         "type": "primary"
       }
     },
@@ -18,7 +18,7 @@
       "image": "education",
       "cta": {
         "label": "discover resources",
-        "target": "https://portal.minimal-gaia-x.eu/",
+        "target": "https://gitlab.com/gaia-x/lab/compliance/gx-compliance#how-to-create-self-descriptions",
         "type": "primary"
       }
     }

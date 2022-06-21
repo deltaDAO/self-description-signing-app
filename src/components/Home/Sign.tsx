@@ -16,7 +16,7 @@ export default function Sign(): ReactElement {
   const resultsRef = useRef(null)
 
   return (
-    <div>
+    <div id="signer">
       <div className={styles.header}>
         <h1>{title}</h1>
         <h3>{subtitle}</h3>
