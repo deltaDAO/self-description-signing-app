@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/shacl#",
+    "http://www.w3.org/2001/XMLSchema#",
+    "http://w3id.org/gaia-x/participant#",
+    "@nest"
+  ],
+  "@id": "https://compliance.gaia-x.eu/.well-known/participant.json",
+  "@type": ["VerifiableCredential", "LegalPerson"],
+  "credentialSubject": {
+    "id": "did:compliance.gaia-x.eu",
+    "gx-participant:name": {
+      "@value": "Gaia-X AISBL",
+      "@type": "xsd:string"
+    },
+    "gx-participant:legalName": {
+      "@value": "Gaia-X European Association for Data and Cloud AISBL",
+      "@type": "xsd:string"
+    },
+    "gx-participant:registrationNumber": {
+      "@value": "0762747721",
+      "@type": "xsd:string"
+    },
+    "gx-participant:headquarterAddress": {
+      "@type": "gx-participant:Address",
+      "gx-participant:country": {
+        "@value": "BE",
+        "@type": "xsd:string"
+      },
+      "gx-participant:street-address": {
+        "@value": "Avenue des Arts 6-9",
+        "@type": "xsd:string"
+      },
+      "gx-participant:postal-code": {
+        "@value": "1210",
+        "@type": "xsd:string"
+      },
+      "gx-participant:locality": {
+        "@value": "Bruxelles/Brussels",
+        "@type": "xsd:string"
+      }
+    },
+    "gx-participant:legalAddress": {
+      "@type": "gx-participant:Address",
+      "gx-participant:country": {
+        "@value": "BE",
+        "@type": "xsd:string"
+      },
+      "gx-participant:street-address": {
+        "@value": "Avenue des Arts 6-9",
+        "@type": "xsd:string"
+      },
+      "gx-participant:postal-code": {
+        "@value": "1210",
+        "@type": "xsd:string"
+      },
+      "gx-participant:locality": {
+        "@value": "Bruxelles/Brussels",
+        "@type": "xsd:string"
+      }
+    }
+  }
+}
