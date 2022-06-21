@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: calc(var(--spacer) / 4);
+  align-items: flex-end;
+  margin-bottom: var(--spacer);
+}
+
+.container svg {
+  margin: 0;
+  height: 2rem !important;
+  width: 2rem !important;
+}
+
+.container svg path {
+  fill: var(--brand-alert-yellow);
+}
+
+.container p {
+  margin-bottom: 0;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--border-radius);
+  color: var(--brand-alert-yellow);
+  text-decoration: underline;
+}
