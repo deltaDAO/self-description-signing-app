@@ -8,10 +8,12 @@ import styles from './SignForm.module.css'
 import content from '../../../content/sign.json'
 
 export default function SignForm({
+  errorsRef,
   resultsRef,
   setSignedSD,
   setSignatureErrors
 }: {
+  errorsRef: any
   resultsRef: any
   setSignedSD: (signedSD: string) => void
   setSignatureErrors: (signatureErrors: string) => void
@@ -24,6 +26,8 @@ export default function SignForm({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!isAccepted) return
+    setSignedSD('')
+    setSignatureErrors('')
 
     setIsLoading(true)
     try {
@@ -35,7 +39,14 @@ export default function SignForm({
         resultsRef.current.scrollIntoView({ behavior: 'smooth' })
         return
       }
-      if (responseSD?.errors) setSignatureErrors(responseSD.errors)
+      if (responseSD?.errors) {
+        setSignatureErrors(responseSD.errors)
+        toast.error('The provided self-description is not valid.')
+        errorsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        })
+      }
     } catch (error) {
       if (error instanceof Error) console.error(error.message)
       console.error(String(error))

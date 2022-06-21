@@ -8,28 +8,22 @@ export async function signServiceSelfDescription(body: any): Promise<{
 }> {
   if (!body) return { signed: false }
   try {
-    const response = await axios.post(`${complianceUri}/sign`, body)
+    const response = await axios.post(`${complianceUri}/sign`, {
+      selfDescription: body
+    })
     const { data, status } = response
 
-    if (status === 200) {
-      const signedServiceSelfDescription = {
-        signed: true,
-        signedSD: {
-          selfDescriptionCredential: { ...body },
-          ...data
-        }
-      }
-      return signedServiceSelfDescription
-    }
-
-    if (status === 409) {
+    if (status === 200 && data?.signedSelfDescription) {
       return {
-        signed: false,
-        errors: data
+        signed: true,
+        signedSD: data.signedSelfDescription
       }
     }
 
-    return { signed: false }
+    return {
+      signed: false,
+      errors: data
+    }
   } catch (error: unknown) {
     if (error instanceof Error) console.error(error.message)
     console.error(String(error))

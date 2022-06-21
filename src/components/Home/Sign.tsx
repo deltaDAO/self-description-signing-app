@@ -12,6 +12,7 @@ export default function Sign(): ReactElement {
   const { title, subtitle, titleSuccess, titleFail } = content
   const [signedSD, setSignedSD] = useState<string>()
   const [signatureErrors, setSignatureErrors] = useState<string>()
+  const errorsRef = useRef(null)
   const resultsRef = useRef(null)
 
   return (
@@ -23,6 +24,7 @@ export default function Sign(): ReactElement {
       <SignForm
         setSignedSD={setSignedSD}
         setSignatureErrors={setSignatureErrors}
+        errorsRef={errorsRef}
         resultsRef={resultsRef}
       />
       {signedSD && (
@@ -47,7 +49,7 @@ export default function Sign(): ReactElement {
         </div>
       )}
       {signatureErrors && (
-        <div className={styles.signedContainer} ref={resultsRef}>
+        <div className={styles.signedContainer} ref={errorsRef}>
           <h1>{titleFail}</h1>
           <Visualizer text={signatureErrors} />
         </div>
