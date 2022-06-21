@@ -1,28 +1,28 @@
 {
   "posts": [
     {
-      "title": "Gaia-X hackathon#3: summary and key achievements",
-      "image": "hackathon3",
+      "title": "Medium about Compliance Service",
+      "image": "compliance",
       "link": "https://deltadao.medium.com/gaia-x-compliance-service-a3df1d6ffc52"
     },
     {
-      "title": "Accelerating the Gaia-X SW framework through OSS Projects and a SW Lab",
-      "image": "gxlab",
+      "title": "Gaia-X Compliance Service Repository",
+      "image": "compliance_repo",
       "link": "https://gitlab.com/gaia-x/lab/compliance/gx-compliance"
     },
     {
-      "title": "Owned by no one, open to everyone. Gaia-X data spaces powered by Ocean Protocol",
-      "image": "ownedopen",
+      "title": "Gaia-X Registry Repository",
+      "image": "registry_repo",
       "link": "https://gitlab.com/gaia-x/lab/compliance/gx-registry"
     },
     {
-      "title": "Owned by no one, open to everyone. Gaia-X data spaces powered by Ocean Protocol",
-      "image": "ownedopen",
+      "title": "Self Description Signer",
+      "image": "signer",
       "link": "https://github.com/deltaDAO/self-description-signer/"
     },
     {
-      "title": "Owned by no one, open to everyone. Gaia-X data spaces powered by Ocean Protocol",
-      "image": "ownedopen",
+      "title": "Compliance Service Guide",
+      "image": "compliance_guide",
       "link": "https://compliance.gaia-x.eu/guide/"
     }
   ]

@@ -11,6 +11,10 @@
   margin: auto;
 }
 
+.postList a {
+  width: 100%;
+}
+
 .more {
   margin-top: calc(var(--spacer) / 2);
   display: block;
