@@ -6,6 +6,7 @@ import Loader from '../atoms/Loader'
 import Warning from '../atoms/Warning'
 import styles from './SignForm.module.css'
 import content from '../../../content/sign.json'
+import placeholder from '../../../content/signFormPlaceholder.json'
 
 export default function SignForm({
   errorsRef,
@@ -67,6 +68,7 @@ export default function SignForm({
           className={styles.textarea}
           onChange={(e) => setUnsignedSD(e.target.value)}
           value={unsignedSD}
+          placeholder={JSON.stringify(placeholder, null, 2)}
         />
         <Warning />
         <label>
