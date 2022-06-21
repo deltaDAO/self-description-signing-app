@@ -1,0 +1,26 @@
+{
+  "sections": [
+    {
+      "title": "Self Description signing",
+      "subtitle": "Gaia-X Hackathon #4 ",
+      "content": "Need some help signing your Self Description? We’ve got you covered!",
+      "image": "business_analytics",
+      "cta": {
+        "label": "try it now",
+        "target": "https://academy.delta-dao.com/",
+        "type": "primary"
+      }
+    },
+    {
+      "title": "Need a Self Description?",
+      "subtitle": "Self Description Creation",
+      "content": "Find helpful ressources about Self Descriptions.",
+      "image": "education",
+      "cta": {
+        "label": "discover resources",
+        "target": "https://portal.minimal-gaia-x.eu/",
+        "type": "primary"
+      }
+    }
+  ]
+}
