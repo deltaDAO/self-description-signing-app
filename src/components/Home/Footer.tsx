@@ -7,7 +7,9 @@ export default function Footer(): ReactElement {
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
-        <div className={styles.copyright}>© {year} All Rights Reserved.</div>
+        <div className={styles.copyright}>
+          &#169; {year} All Rights Reserved.
+        </div>
         <div className={styles.links}>
           <a
             href="https://www.delta-dao.com/imprint"
