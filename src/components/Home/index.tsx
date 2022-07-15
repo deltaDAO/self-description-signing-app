@@ -8,6 +8,7 @@ import Container from '../atoms/Container'
 import Waves from '../atoms/Waves'
 import BlogPosts from './BlogPosts'
 import Logo from '../atoms/Logo'
+import Footer from './Footer'
 
 export default function HomePage(): ReactElement {
   return (
@@ -29,6 +30,7 @@ export default function HomePage(): ReactElement {
 
       <footer className={styles.footer}>
         <Logo poweredBy />
+        <Footer />
       </footer>
     </>
   )
