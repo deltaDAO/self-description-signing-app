@@ -1,63 +1,33 @@
 {
   "@context": [
-    "http://www.w3.org/ns/shacl#",
-    "http://www.w3.org/2001/XMLSchema#",
-    "http://w3id.org/gaia-x/participant#",
-    "@nest"
+    "https://www.w3.org/2018/credentials/v1",
+    "http://w3id.org/gaia-x/participant",
+    "https://registry.gaia-x.eu/v2206/api/shape/files?file=participant&type=ttl"
   ],
-  "@id": "https://compliance.gaia-x.eu/.well-known/participant.json",
-  "@type": ["VerifiableCredential", "LegalPerson"],
+  "type": ["VerifiableCredential", "LegalPerson"],
+  "id": "https://delta-dao.com/.well-known/participant.json",
+  "issuer": "did:web:delta-dao.com",
+  "issuanceDate": "2022-09-15T20:05:20.997Z",
   "credentialSubject": {
-    "id": "did:compliance.gaia-x.eu",
-    "gx-participant:name": {
-      "@value": "Gaia-X AISBL",
-      "@type": "xsd:string"
-    },
-    "gx-participant:legalName": {
-      "@value": "Gaia-X European Association for Data and Cloud AISBL",
-      "@type": "xsd:string"
-    },
+    "id": "did:web:delta-dao.com",
+    "gx-participant:legalName": "deltaDAO AG",
     "gx-participant:registrationNumber": {
-      "@value": "0762747721",
-      "@type": "xsd:string"
+      "gx-participant:registrationNumberType": "leiCode",
+      "gx-participant:registrationNumberNumber": "391200FJBNU0YW987L26"
     },
+    "gx-participant:blockchainAccountId": "0x4C84a36fCDb7Bc750294A7f3B5ad5CA8F74C4A52",
     "gx-participant:headquarterAddress": {
-      "@type": "gx-participant:Address",
-      "gx-participant:country": {
-        "@value": "BE",
-        "@type": "xsd:string"
-      },
-      "gx-participant:street-address": {
-        "@value": "Avenue des Arts 6-9",
-        "@type": "xsd:string"
-      },
-      "gx-participant:postal-code": {
-        "@value": "1210",
-        "@type": "xsd:string"
-      },
-      "gx-participant:locality": {
-        "@value": "Bruxelles/Brussels",
-        "@type": "xsd:string"
-      }
+      "gx-participant:addressCountryCode": "DE",
+      "gx-participant:addressCode": "DE-HH",
+      "gx-participant:streetAddress": "Geibelstraße 46b",
+      "gx-participant:postalCode": "22303"
     },
     "gx-participant:legalAddress": {
-      "@type": "gx-participant:Address",
-      "gx-participant:country": {
-        "@value": "BE",
-        "@type": "xsd:string"
-      },
-      "gx-participant:street-address": {
-        "@value": "Avenue des Arts 6-9",
-        "@type": "xsd:string"
-      },
-      "gx-participant:postal-code": {
-        "@value": "1210",
-        "@type": "xsd:string"
-      },
-      "gx-participant:locality": {
-        "@value": "Bruxelles/Brussels",
-        "@type": "xsd:string"
-      }
-    }
+      "gx-participant:addressCountryCode": "DE",
+      "gx-participant:addressCode": "DE-HH",
+      "gx-participant:streetAddress": "Geibelstraße 46b",
+      "gx-participant:postalCode": "22303"
+    },
+    "gx-participant:termsAndConditions": "70c1d713215f95191a11d38fe2341faed27d19e083917bc8732ca4fea4976700"
   }
 }
