@@ -1,4 +1,4 @@
-import { FormEvent, ReactElement, useState } from 'react'
+import { FormEvent, ReactElement, useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify'
 import { signServiceSelfDescription } from '../../utils/sign'
 import Button from '../atoms/Button'
@@ -6,8 +6,9 @@ import Loader from '../atoms/Loader'
 import Warning from '../atoms/Warning'
 import styles from './SignForm.module.css'
 import content from '../../../content/sign.json'
-import placeholder from '../../../content/signFormPlaceholder.json'
+import placeholderText from '../../../content/signFormPlaceholder.json'
 import Markdown from '../atoms/Markdown'
+import CopyIcon from '../../../public/images/copy.svg'
 
 export default function SignForm({
   errorsRef,
@@ -20,10 +21,22 @@ export default function SignForm({
   setSignedSD: (signedSD: string) => void
   setSignatureErrors: (signatureErrors: string) => void
 }): ReactElement {
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const placeholderRef = useRef<HTMLTextAreaElement>(null)
+  const placeholder = JSON.stringify(placeholderText, null, 2)
   const { title, subtitle } = content.form
   const [unsignedSD, setUnsignedSD] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isAccepted, setIsAccepted] = useState(false)
+
+  useEffect(() => {
+    if (!textareaRef.current || !placeholderRef.current) return
+
+    textareaRef.current.style.height = 'inherit'
+    textareaRef.current.style.height = !unsignedSD
+      ? `${placeholderRef.current.scrollHeight}px`
+      : `${textareaRef.current.scrollHeight}px`
+  }, [unsignedSD])
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -64,13 +77,32 @@ export default function SignForm({
     <div className={styles.container}>
       <h1>{title}</h1>
       <Markdown text={subtitle} />
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
         <textarea
+          ref={textareaRef}
           className={styles.textarea}
           onChange={(e) => setUnsignedSD(e.target.value)}
           value={unsignedSD}
-          placeholder={JSON.stringify(placeholder, null, 2)}
+          placeholder={placeholder}
         />
+        <textarea
+          ref={placeholderRef}
+          className={styles.placeholderSpacer}
+          defaultValue={placeholder}
+        />
+        {!unsignedSD && (
+          <Button
+            style="primary"
+            className={styles.copyExampleButton}
+            onClick={() => {
+              navigator.clipboard.writeText(placeholder)
+              toast.success('Copied to clipboard')
+            }}
+          >
+            <CopyIcon />
+            <span className={styles.copyButtonText}> Copy example</span>
+          </Button>
+        )}
         <Warning />
         <label>
           <input

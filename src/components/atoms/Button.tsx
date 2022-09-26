@@ -25,6 +25,7 @@ export default function Button({
   children,
   size,
   style,
+  className,
   ...props
 }: ButtonProps): ReactElement {
   const styleClasses = cx({
@@ -33,7 +34,8 @@ export default function Button({
     ghost: style === 'ghost',
     outline: style === 'outline',
     text: style === 'text',
-    small: size === 'small'
+    small: size === 'small',
+    [className as string]: className
   })
 
   return href ? (
