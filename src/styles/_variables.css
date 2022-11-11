@@ -1,3 +1,5 @@
+@import url('../static/fonts/fonts.css');
+
 :root {
   --brand-white: #ffffff;
   --brand-black: #141414;
@@ -63,7 +65,6 @@
   --font-size-h5: 1.1rem;
   --font-weight-base: 400;
   --font-weight-bold: 700;
-  --font-weight-heavy: 900;
   --line-height: 1.6;
 
   --spacer: 2.5rem;
